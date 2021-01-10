@@ -10,8 +10,8 @@ import { MARGIN, WIDTH } from "./Config";
 const styles = StyleSheet.create({
   container: {
     width: WIDTH - MARGIN,
-    padding: 2,
     flexGrow: 1,
+    paddingVertical: 2,
     justifyContent: 'center',
   },
 });
@@ -29,10 +29,8 @@ const Tile = ({ code, language }: TileProps) => {
         style={{
           borderRadius: 4,
           marginVertical: 1,
-          paddingHorizontal: 12,
           flexGrow: 1,
           justifyContent: "center",
-          backgroundColor: "white"
         }}>
         <CodeHighlighter language={language} code={code}/>
       </View>

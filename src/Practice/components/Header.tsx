@@ -14,6 +14,7 @@ const PracticeHeader: FC = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 2,
+        flexGrow: 1,
         backgroundColor: "white"
     }
 })

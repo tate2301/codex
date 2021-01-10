@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import { Routes } from "./src/Routes";
 import Chrome from "./src/editor";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import Splash from "./src/Splash";
 import Practice from "./src/Practice";
 import Lesson from "./src/Lesson";
@@ -56,11 +56,11 @@ const AppNavigator = () => (
 const App = () => {
   return (
     <NavigationContainer>
-      <SafeAreaView
-        style={{ flex: 1, backgroundColor: "white" }}
-      >
-        <AppNavigator />
-      </SafeAreaView>
+        <SafeAreaView
+          style={{ flex: 1, backgroundColor: "white" }}
+        >
+          <AppNavigator />
+        </SafeAreaView>
     </NavigationContainer>
 
   );

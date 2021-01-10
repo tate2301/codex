@@ -4,12 +4,14 @@ import DragEditor from '../../editor';
 import tailwind from "tailwind-rn"
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Text from '../../components/Text';
+import { data } from '../../data';
 
-const CodeElement: FC = () => {
+const CodeElement: FC = ({id}:any ) => {
 
+    const d = 1
     return(
-        <View style={[styles.container, tailwind("bg-gray-200")]}>
-            <DragEditor />
+        <View style={[styles.container, tailwind("bg-gray-700")]}>
+            <DragEditor tiles={data.exercises[d].tiles} finalKeys={data.exercises[d].finalKeys} />
         </View>
     )
 }
@@ -17,7 +19,7 @@ const CodeElement: FC = () => {
 const styles = StyleSheet.create({
     container: {
         padding: 4,
-        flex: 4,
+        flex: 3,
         height: '100%'
     }
 })

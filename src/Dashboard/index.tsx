@@ -1,27 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import CourseCard, { ICourse } from './components/CourseCard';
+import CourseCard, { ICourse, TagProps } from './components/CourseCard';
 
 const Home: React.FC = props => {
     
     const courses = new Array<ICourse>(
         {
             id: 1,
-            title: 'Learn Javascript',
+            title: '1. Hello World',
             tagline: 'Calling a Function and Scope of Code.',
-            color: 'purple'
-        },
-        {
-            id: 2,
-            title: 'Learn C',
-            tagline: 'The basics of the language that powers everything.',
-            color: 'red'
-        },
-        {
-            id: 3,
-            title: 'Learn C++',
-            tagline: 'A powerfull object orientated language.',
-            color: 'pink'
+            color: 'purple',
+            tags: new Array<TagProps>(
+                {
+                    label: "EASY",
+                    color: "blue"
+                },
+                {
+                    label: "HASH TABLE",
+                    color: "yellow"
+                },
+                {
+                    label: "GOOGLE",
+                    color: "red"
+                },
+                {
+                    label: "FACEBOOK",
+                    color: "red"
+                }
+            )
         },
     )
 
