@@ -8,12 +8,13 @@ In this project, we explored how CS students acquire knowledge in the context of
 Preparing for a coding interview indicates self-regulated learning activities like setting goals and reviewing systematic knowledge. Existing platforms such as Leetcode typically support practicing problems with less reflective affordance. Notably, the approach could incur extraneous cognitive load when the interview is imminent, and there's a lack of a tool to assist in the "last mile" preparation.
 
 #### THE SOLUTION
-### A cross-platform code learning system that implements Parsons Problem to effectively teach programming
+### A cross-platform code learning system that provides a lightweight code learning experience through mobile Parsons Problem
 
-### A lightweight code learning experience through mobile Parsons Problem
 An effective and less stressful exercise that simply asks users to rearrange a set of code snippets to get the program right.
 
 A tool that facilitates the learning of programming by providing a mobile application for Parsons problems. These are small assignments where learners build programs by ordering and indenting fragments of code. Parsons problems are well-suited to the mobile context as the assignments form small chunks of learning content that individually require little time to go through and may be freely divided across multiple learning sessions. Furthermore, in response to previous analysis of students using a web environment for Parsons problems, we describe improvements to the automatic feedback given in these assignments.
+
+    "Mastery of basic syntactic and logical constructs is an essential part of learning to program. Unfortunately, practice exercises for programming basics can be very tedious, making it difficult to motivate students." 
 
 ### Parson’s Problems
 A Parson's Problem is a task that involves giving learners all of the lines of code required to solve a problem, but with the lines jumbled.
