@@ -30,3 +30,12 @@ Have a go at this yourself!
 ```
 The code above wouldn’t work because variables are being used before they have been declared. It is the job of the learner to put these lines of code into the correct order to make a working program.
 Extra layers of complexity can be added to make Parson’s Problems more suitable to the increasing ability of the learners. For example, when teaching concepts such as selection and loops in Python, indentation is important. These are known as a 2D Parson’s Problem. You could begin with scaffolding the indentation for the learners by using a block-based editor such as Scratch or EduBlocks in which the learners have to connect the blocks together but the indention is already provided. 
+
+### What are the benefits of Parson’s Problems?
+Other than the main benefit outlined above, Parson’s Problems expose the learner to logic and syntax that they may not be fully familiar with.
+Denny et al. “make a case that marks from a Parson’s Problem make clear what students don’t know (specifically in both syntax and logic)”. They can allow for an easier analysis of the common errors that learners make. “The open-ended nature of code writing questions makes identifying errors difficult” — but we can be sure when using a Parson’s Problem that the error wasn’t because of a typo.
+Code tracing (the process of learners reading code and identifying what it does or would output as) is considered to fall into the lower categories of Bloom’s taxonomy, whereas code writing is considered a higher-order skill. Parson’s problems require the learners to organise, examine, and experiment with pre-existing coding structures, all of which are the upper middle skills within the taxonomy.
+
+### References
+[Mobile Learning Application for Parsons Problems with Automatic Feedback](https://www.researchgate.net/publication/258432280_A_Mobile_Learning_Application_for_Parsons_Problems_with_Automatic_Feedback)
+[Parson’s ProgrammingPuzzles: a Fun and Eﬀective Learning Tool for FirstProgramming Courses](https://www.researchgate.net/publication/262160581_Parson's_programming_puzzles_A_fun_and_effective_learning_tool_for_first_programming_courses)
