@@ -1,11 +1,8 @@
 # Codex - A cross-platform app that helps students learn programming with metacognitive learning strategies
 
 ## Project Overview
-In this project, we explored how CS students acquire knowledge in the context of self-regulated learning including in preparation for technical interview preparation which is a specialized process testing computer science candidates' coding skills.
+In this project, we present a tool that facilitates the learning of programming by providing a mobile application for Parsons problems. These are small assignments where learners build programs by ordering and indenting fragments of code. Parsons problems are well-suited to the mobile context as the assignments form small chunks of learning content that individually require little time to go through and may be freely divided across multiple learning sessions.
 
-#### THE CHALLENGE
-### The coding interview learning experience is currently heavily platform-based, tedious, stressful, and lacks reflective components.
-Preparing for a coding interview indicates self-regulated learning activities like setting goals and reviewing systematic knowledge. Existing platforms such as Leetcode typically support practicing problems with less reflective affordance. Notably, the approach could incur extraneous cognitive load when the interview is imminent, and there's a lack of a tool to assist in the "last mile" preparation.
 
 #### THE SOLUTION
 ### A cross-platform code learning system that provides a lightweight code learning experience through mobile Parsons Problem
