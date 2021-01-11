@@ -9,6 +9,8 @@ import Splash from "./src/Splash";
 import Practice from "./src/Practice";
 import Lesson from "./src/Lesson";
 import Home from "./src/Dashboard";
+import { Platform } from "react-native";
+import LessonList from "./src/Lesson/components/LessonList";
 
 const Stack = createStackNavigator<Routes>();
 const AppNavigator = () => (
@@ -26,6 +28,13 @@ const AppNavigator = () => (
       options={{
         title: "Splash Page",
         header: () => null,
+      }}
+    />
+    <Stack.Screen
+      name="LessonList"
+      component={LessonList}
+      options={{
+        title: "Lessons",
       }}
     />
     <Stack.Screen
@@ -54,7 +63,20 @@ const AppNavigator = () => (
 );
 
 const App = () => {
-  return (
+  return Platform.OS === "web" ?
+   (
+    <NavigationContainer>
+        <SafeAreaProvider>
+        <SafeAreaView
+          style={{ flex: 1, backgroundColor: "white" }}
+        >
+          <AppNavigator />
+        </SafeAreaView>
+        </SafeAreaProvider>
+    </NavigationContainer>
+
+  )
+   : (
     <NavigationContainer>
         <SafeAreaView
           style={{ flex: 1, backgroundColor: "white" }}
@@ -64,6 +86,7 @@ const App = () => {
     </NavigationContainer>
 
   );
+  
 };
 
 export default App;

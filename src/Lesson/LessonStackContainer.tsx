@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { StyleSheet, View } from 'react-native';
-import FlashCardList from './components/FlashCardsList';
+import Header from './components/Header';
 
-const Lesson: FC = ({props}: any) => {
+const LessonStackContainer: FC = ({props}: any) => {
     return(
         <View>
-            <FlashCardList />
+            <Header/>
         </View>
     )
 } 
@@ -14,4 +14,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default Lesson
+export default LessonStackContainer

@@ -19,7 +19,7 @@ export interface TagProps {
 const CourseCard: FC = ({course, navigation}: any) => {
     const navigateToLesson = () => {
         console.log({action: 'Navigating to Lesson', id: course.id})
-        navigation.navigate('Lesson', {course})
+        navigation.navigate('LessonList', {course})
     }
 
     const navigateToExercise = () => {

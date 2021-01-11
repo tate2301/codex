@@ -10,7 +10,7 @@ export interface TextProps extends OriginalTextProps {
 }
 
 const Text = ({ dark, type, style, children }: TextProps) => {
-  const color = dark ? "white" : "black";
+  const color = dark ? "white" : "#121212";
   return (
     <RNText style={[StyleGuide.typography[type || "body"], { color }, style]}>
       {children}

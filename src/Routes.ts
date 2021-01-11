@@ -4,4 +4,5 @@ export type Routes = {
   Home: undefined;
   Lesson: undefined;
   Practice: undefined;
+  LessonList: undefined;
 };
