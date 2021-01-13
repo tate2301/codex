@@ -1,24 +1,26 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Animated, StyleSheet, View } from 'react-native';
-import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
-import LessonContent from './Content';
-import data from "../lesson_data"
-import {spec} from "./card-theme"
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import {spec} from "../data/card-theme"
 import Text from '../../components/Text';
 import Markdown from 'react-native-markdown-display';
+import { ILesson } from '../../../lib/types';
 
-const FlashCardList = () => {
+interface LessonFlashCardProps {
+    lessons: [ILesson];
+}
+const LessonFlashCards = ({lessons}: LessonFlashCardProps) => {
     let scrollX = React.useRef(new Animated.Value(0)).current
-
+    
     return (
         <View>
             <Animated.FlatList
-                data={data}
+                data={lessons}
                 horizontal
                 decelerationRate={"fast"}
                 showsHorizontalScrollIndicator={false}
                 snapToInterval={spec.SNAP_INTERVAL }
-                keyExtractor={item => item.key}
+                keyExtractor={item => item.id}
                 onScroll={Animated.event(
                     [{nativeEvent:{contentOffset: { x: scrollX}},}],
                     {useNativeDriver: true}
@@ -39,7 +41,7 @@ const FlashCardList = () => {
                                     </Text>
                                     <View style={{paddingVertical: 8}}>
                                         <Markdown>
-                                            {item.text}
+                                            {item.description}
                                         </Markdown>
                                     </View>
                                 </Animated.View>
@@ -75,4 +77,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default FlashCardList
+export default LessonFlashCards

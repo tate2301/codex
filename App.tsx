@@ -63,20 +63,7 @@ const AppNavigator = () => (
 );
 
 const App = () => {
-  return Platform.OS === "web" ?
-   (
-    <NavigationContainer>
-        <SafeAreaProvider>
-        <SafeAreaView
-          style={{ flex: 1, backgroundColor: "white" }}
-        >
-          <AppNavigator />
-        </SafeAreaView>
-        </SafeAreaProvider>
-    </NavigationContainer>
-
-  )
-   : (
+  return (
     <NavigationContainer>
         <SafeAreaView
           style={{ flex: 1, backgroundColor: "white" }}

@@ -1,11 +1,12 @@
 import React, { FC } from 'react';
 import { StyleSheet, View } from 'react-native';
-import FlashCardList from './components/FlashCardsList';
+import LessonFlashCards from './components/FlashCardsList';
+import data from "./data/lesson_data"
 
 const Lesson: FC = ({props}: any) => {
     return(
         <View>
-            <FlashCardList />
+            <LessonFlashCards lessons={data} />
         </View>
     )
 } 

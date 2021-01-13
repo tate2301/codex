@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import tailwind from 'tailwind-rn';
 import Text from '../../components/Text';
-import { spec } from './card-theme';
+import { spec } from '../data/card-theme';
 
 const LessonListCard = ({title, notes}) => {
     return (
@@ -25,12 +25,12 @@ const styles = StyleSheet.create({
         marginVertical: spec.SPACING / 2
     },
     title: {
-        fontSize: 20,
-        fontWeight: "bold"
+        fontSize: 14,
+        fontWeight: "600"
     },
     tagline: {
-        fontSize: 14,
-        paddingTop: 8
+        fontSize: 12,
+        paddingTop: 4
     }
 })
 

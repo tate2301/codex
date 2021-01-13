@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { StyleSheet, View } from 'react-native';
+import SliderApp from './CodingReview/SliderApp';
 import CodeElement from './components/CodeElement';
 import PracticeHeader from './components/Header';
 
@@ -7,8 +8,7 @@ import PracticeHeader from './components/Header';
 const Practice: FC = ({navigation}: any) => {
     return(
         <View style={styles.container}>
-            <PracticeHeader />
-            <CodeElement />
+            <SliderApp />
         </View>
     )
 }

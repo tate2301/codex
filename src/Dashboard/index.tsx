@@ -29,6 +29,22 @@ const Home: React.FC = props => {
                 }
             )
         },
+        {
+            id: 2,
+            title: '1. Array of Double Pairs',
+            tagline: 'Calling a Function and Scope of Code.',
+            color: 'purple',
+            tags: new Array<TagProps>(
+                {
+                    label: "EASY",
+                    color: "blue"
+                },
+                {
+                    label: "FACEBOOK",
+                    color: "red"
+                }
+            )
+        },
     )
 
     return (

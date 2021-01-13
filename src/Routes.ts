@@ -5,4 +5,6 @@ export type Routes = {
   Lesson: undefined;
   Practice: undefined;
   LessonList: undefined;
+  SliderApp: undefined;
+  LessonReview: undefined;
 };
