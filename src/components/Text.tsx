@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
-import { TextProps as OriginalTextProps, Text as RNText } from "react-native";
-
+import { TextProps as OriginalTextProps } from "react-native";
+import styled from 'styled-components/native'
 import StyleGuide from "./StyleGuide";
 
 export interface TextProps extends OriginalTextProps {
@@ -17,5 +17,10 @@ const Text = ({ dark, type, style, children }: TextProps) => {
     </RNText>
   );
 };
+
+const RNText = styled.Text`
+  font-size: 14px;
+`
+
 
 export default Text;

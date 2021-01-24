@@ -4,9 +4,9 @@ import tailwind from 'tailwind-rn';
 import Text from '../../components/Text';
 import { spec } from '../data/card-theme';
 
-const LessonListCard = ({title, notes}) => {
+const LessonListCard = ({title, notes, navigation}) => {
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity onPress={() => navigation.push("Lesson")} style={styles.container}>
             <Text style={styles.title}>
                 {title}
             </Text>

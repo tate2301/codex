@@ -1,19 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
+import firebase from  './lib/__firebase'
 
 import { Routes } from "./src/Routes";
 import Chrome from "./src/editor";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context";
 import Splash from "./src/Splash";
 import Practice from "./src/Practice";
 import Lesson from "./src/Lesson";
 import Home from "./src/Dashboard";
-import { Platform } from "react-native";
 import LessonList from "./src/Lesson/components/LessonList";
+import Login from "./src/Auth/Login";
+import SignUp from "./src/Auth/Signup";
+import Profile from "./src/Profile";
 
 const Stack = createStackNavigator<Routes>();
-const AppNavigator = () => (
+const AuthStack = createStackNavigator();
+const Tabs = createBottomTabNavigator(); 
+const ProfileStack = createStackNavigator();
+
+const AuthStackNavigation = () => (
+  <AuthStack.Navigator>
+    <AuthStack.Screen
+      name="SignUp"
+      component={SignUp}
+      options={{
+        title: "Sign up",
+        header: () => {}
+      }}
+    />
+    
+    <AuthStack.Screen
+      name="Login"
+      component={Login}
+      options={{
+        title: "Sign in",
+        header: () => {}
+      }}
+    />
+
+  </AuthStack.Navigator>
+)
+
+const HomeStackNavigation = () => (
   <Stack.Navigator>
     <Stack.Screen
       name="Home"
@@ -35,14 +66,15 @@ const AppNavigator = () => (
       component={LessonList}
       options={{
         title: "Lessons",
+        header: () => {}
       }}
     />
     <Stack.Screen
       name="Lesson"
       component={Lesson}
-      options={{
-        title: "Lesson",
-      }}
+      options={({route}) => ({
+        title: route.params?.name,
+      })}
     />
     <Stack.Screen
       name="Practice"
@@ -62,13 +94,50 @@ const AppNavigator = () => (
   </Stack.Navigator>
 );
 
+const ProfileStackNavigation = () => ( 
+  <ProfileStack.Navigator>
+    <ProfileStack.Screen name="Profile" component={Profile} />
+  </ProfileStack.Navigator>
+)
+
+const TabsNavigation = () => ( 
+  <Tabs.Navigator>
+    <Tabs.Screen name="Home" component={HomeStackNavigation} />
+    <Tabs.Screen name="Profile" component={ProfileStackNavigation} />
+  </Tabs.Navigator>
+)
+
 const App = () => {
+  const [userToken, setUserToken] = useState<any>(null)
+
+  useEffect(() => {
+
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        setUserToken(user.uid)
+        console.log("Logged in")
+        // ...
+      } else {
+        setUserToken(null)
+      }
+    });
+  }, [])
+
+  
   return (
     <NavigationContainer>
         <SafeAreaView
-          style={{ flex: 1, backgroundColor: "white" }}
-        >
-          <AppNavigator />
+          style={{ flex: 1, backgroundColor: "white" }}>
+          {
+            userToken ?
+              <TabsNavigation />
+              :
+              <AuthStackNavigation />
+          }
+          
         </SafeAreaView>
     </NavigationContainer>
 

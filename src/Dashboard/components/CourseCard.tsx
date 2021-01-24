@@ -1,13 +1,19 @@
 import React, {FC, ReactNode, useEffect, useState} from 'react'
-import { StyleSheet, TouchableOpacity, View } from 'react-native'
+import { Dimensions, Image, StyleSheet, TouchableOpacity, View } from 'react-native'
 import tailwind from 'tailwind-rn'
 import Text from '../../components/Text'
+import { SharedElement } from "react-navigation-shared-element";
+
+const { width } = Dimensions.get('screen');
+const ITEM_HEIGHT = width * 0.76 * 1.7;
 
 export interface ICourse {
     id: number
     title: string
     tagline: string
+    caption: string
     color: string
+    poster: string
     tags: Array<TagProps>
 }
 
@@ -19,41 +25,61 @@ export interface TagProps {
 const CourseCard: FC = ({course, navigation}: any) => {
     const navigateToLesson = () => {
         console.log({action: 'Navigating to Lesson', id: course.id})
-        navigation.navigate('LessonList', {course})
+        navigation.navigate('LessonList', { id: course.id, title: course.title, caption: course.caption, tagline: course.tagline })
     }
 
-    const navigateToExercise = () => {
-        console.log({action: 'Navigating to Exercise', id: course.id})
-        navigation.navigate('Practice', {course})
-    }
+    const inputRange = [
+
+    ]
 
     return (
-        <View style={[styles.container, tailwind('rounded-lg border-2 border-gray-100 my-4 bg-white p-4')]}>
-            <View>
-                <Text style={tailwind('font-medium')}>{course.title}</Text>
-            </View>
-            <View style={styles.tags}>
-                {course.tags.map(tag => <Tag label={tag.label} color={tag.color} />)}
-            </View>
-            <View>
-                <TouchableOpacity onPress={navigateToLesson} style={tailwind('px-2 py-2 my-1 rounded border border-gray-100 justify-center')}>
-                    <Text style={[tailwind('font-medium text-gray-600 font-medium'), styles.button]}>Lesson review</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={navigateToExercise} style={tailwind('px-2 py-2 my-1 rounded border border-gray-100 justify-center')}>
-                    <Text style={[tailwind('font-medium text-gray-600 font-medium'), styles.button]}>Start practice</Text>
-                </TouchableOpacity>
-            </View>
-        </View>
-    )
-}
+            <TouchableOpacity onPress={navigateToLesson}>
+                <SharedElement id={`course-${course.id}`}>
+                    <View style={[styles.container, {position: 'relative'}, tailwind('rounded-lg border-2 border-gray-100 my-4 bg-white')]}>
+                        <View style={{
+                            zIndex: 6, 
+                            height: ITEM_HEIGHT, 
+                            borderRadius: 8, 
+                            padding: 20,
+                            paddingTop: 32,
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            backgroundColor: '#00000099',
+                            justifyContent: 'space-between'
+                            }}>
+                                <View>
+                                    <Text style={tailwind('text-white')}>
+                                        {course.caption}
+                                    </Text>
+                                    <Text style={tailwind('text-3xl font-bold text-white')}>
+                                        {course.title}
+                                    </Text>
+                                </View>
+                                <View>
+                                    <Text style={tailwind('text-sm text-gray-300')}>
+                                        {course.tagline}
+                                    </Text>
+                                </View>
+                        </View>
 
-const Tag = ({label, color}: TagProps) => (
-    <View style={tailwind(`bg-${color}-100 my-1 mx-2 py-1 px-2 rounded-full`)}>
-        <Text style={[tailwind(`text-${color}-600`), {fontSize: 12}]}>
-            {label}
-        </Text>
-    </View>
-)
+                        <Image 
+                            source={{uri: course.poster}} 
+                            style={{
+                                height: ITEM_HEIGHT,
+                                width: '100%',
+                                borderRadius: 8,
+                                top: 0,
+                                left: 0,
+                            }} 
+                            />
+                    </View>
+            
+                </SharedElement>
+            </TouchableOpacity>
+        )
+}
 
 const styles = StyleSheet.create({
     container: {
