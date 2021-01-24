@@ -16,6 +16,7 @@ import {
 } from 'react-native-gesture-handler';
 import tailwind from 'tailwind-rn';
 import { spec } from '../../Lesson/data/card-theme';
+import CodeElement from '../components/CodeElement';
 
 // https://www.creative-flyers.com
 const DATA = [
@@ -115,7 +116,7 @@ const SliderApp = () => {
               const newStyle = [style, { zIndex: data.length - index }];
               return (
                 <View style={newStyle} index={index} {...props}>
-                  {children}
+                    <CodeElement />
                 </View>
               );
             }}

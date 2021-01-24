@@ -8,7 +8,8 @@ import PracticeHeader from './components/Header';
 const Practice: FC = ({navigation}: any) => {
     return(
         <View style={styles.container}>
-            <SliderApp />
+            <PracticeHeader />
+            <CodeElement />
         </View>
     )
 }

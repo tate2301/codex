@@ -19,7 +19,7 @@ const CodeElement: FC = ({id}:any ) => {
 const styles = StyleSheet.create({
     container: {
         padding: 4,
-        flex: 3,
+        flex: 2.5,
         height: '100%'
     }
 })

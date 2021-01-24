@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ScrollView, StyleSheet, View, Animated } from 'react-native';
+import { ScrollView, StyleSheet, View, Animated, Image } from 'react-native';
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 import tailwind from 'tailwind-rn';
 import Text from '../components/Text';
@@ -63,7 +63,7 @@ const Home: React.FC = props => {
                         <Text style={tailwind('text-xs text-gray-500')}>MY COURSES</Text>
                         <Text style={tailwind('text-xl font-bold text-gray-800')}>Learn something new today</Text>
                         <View style={tailwind('py-2')}>
-                            {courses.map((course) => <MyCourseItem navigation={props.navigation} key={course.id} title={course.title} caption={course.caption} id={course.id} /> )}
+                            {courses.map((course) => <MyCourseItem navigation={props.navigation} key={course.id} title={course.title} caption={course.caption} id={course.id} poster={course.poster}/> )}
                         </View>
                     </View>
 
@@ -85,12 +85,18 @@ const Home: React.FC = props => {
 }
 
 
-const MyCourseItem = ({title, id, caption, navigation}) => {
+const MyCourseItem = ({title, id, caption, navigation, poster}) => {
     return (
         <View style={[{flexDirection: 'row', justifyContent: 'space-between'},tailwind('py-2')]}>
             <View style={[{flexDirection: 'row', flex: 1.5}]}>
-                <View style={tailwind('w-12')}>
-
+                <View style={tailwind('w-12 justify-center')}>
+                    <Image
+                        source={{uri: poster}}
+                        style={{
+                            width: '80%',
+                            height: 40,
+                            borderRadius: 8,
+                        }}/>
                 </View>
                 <View>
                     <Text style={tailwind('text-sm font-bold text-gray-800')}>{title}</Text>
@@ -100,8 +106,8 @@ const MyCourseItem = ({title, id, caption, navigation}) => {
                 </View>
             </View>
             <View style={{flex:1, alignSelf: 'center', justifyContent: 'flex-end', flexDirection: 'row'}}>
-                <TouchableOpacity onPress={() => navigation.push('LessonList', {id})} style={tailwind('py-1 px-2 bg-gray-200 rounded-full')}>
-                    <Text style={tailwind('text-xs font-bold text-gray-800')}>CONTINUE</Text>
+                <TouchableOpacity onPress={() => navigation.push('Practice', {id})} style={tailwind('py-1 px-2 bg-gray-200 rounded-full')}>
+                    <Text style={tailwind('text-xs font-bold text-gray-800')}>PRACTICE</Text>
                 </TouchableOpacity>
             </View>
         </View>

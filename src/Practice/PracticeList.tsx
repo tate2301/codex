@@ -11,12 +11,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 const { width } = Dimensions.get('screen');
-import { EvilIcons } from '@expo/vector-icons';
-import {
-  FlingGestureHandler,
-  Directions,
-  State,
-} from 'react-native-gesture-handler';
+import CodeElement from './components/CodeElement'
 
 
 const OVERFLOW_HEIGHT = 70;
@@ -32,7 +27,6 @@ const OverflowItems = ({ data }) => {
         {data.map((item, index) => {
           return (
             <View key={index} style={styles.itemContainer}>
-              
             </View>
           );
         })}

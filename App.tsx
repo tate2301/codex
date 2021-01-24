@@ -64,10 +64,9 @@ const HomeStackNavigation = () => (
     <Stack.Screen
       name="LessonList"
       component={LessonList}
-      options={{
-        title: "Lessons",
-        header: () => {}
-      }}
+      options={({route}) => ({
+        title: route.params?.title || "Lessons",
+      })}
     />
     <Stack.Screen
       name="Lesson"
@@ -133,7 +132,7 @@ const App = () => {
           style={{ flex: 1, backgroundColor: "white" }}>
           {
             userToken ?
-              <TabsNavigation />
+              <HomeStackNavigation />
               :
               <AuthStackNavigation />
           }
