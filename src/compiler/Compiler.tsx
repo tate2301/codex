@@ -20,7 +20,7 @@ export default function Compiler() {
         setLoading(true)
         setRunningResult("")
         setRunError("")
-        Axios.post("http://192.168.43.30:8000/compile", { code: value })
+        Axios.post("http://ec2-3-8-153-110.eu-west-2.compute.amazonaws.com:8000/compile", { code: value })
             .then(response => {
                 if (!response.data.error) {
                     setRunningResult(response.data?.message)
