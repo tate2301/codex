@@ -2,12 +2,12 @@ import React from 'react'
 import { View, StyleSheet, TextInput, TouchableOpacity, ActivityIndicator, ScrollView } from 'react-native'
 import { spec } from '../Lesson/data/card-theme'
 import SyntaxHighlighter from 'react-native-syntax-highlighter';
-import { a11YWhite } from 'react-syntax-highlighter/styles/hljs';
-import tailwind from 'tailwind-rn';
+import { arduinoLight } from 'react-syntax-highlighter/styles/hljs';
 import Text from '../components/Text';
 import Markdown from 'react-native-markdown-display';
 import { useFonts, SpaceMono_400Regular } from '@expo-google-fonts/space-mono';
 import Axios from 'axios';
+import tailwind from 'tailwind-rn';
 
 // Show something on top of other
 export default function Compiler() {
@@ -51,13 +51,13 @@ export default function Compiler() {
     
     return (
         <View style={styles.container}>
-            <View style={{flex: 3, height: '100%'}}>
+            <View style={[{flex: 3, height: '100%', paddingVertical: 4 }, tailwind("rounded-lg")]}>
                 <View
-                    style={{position: "absolute", top: 0, left: 0, height: '100%', backgroundColor: "#fff"}}>
+                    style={[{position: "absolute", top: 0, left: 0, height: '100%', backgroundColor: "#fff", width: "100%"}, tailwind("rounded-lg")]}>
                     <SyntaxHighlighter 
                         language={"c"} 
                         customStyle={{fontSize: 12, fontFamily: "SpaceMono_400Regular"}}
-                        style={a11YWhite}
+                        style={arduinoLight}
                         highlighter={"hljs"}>
                         {value}
                     </SyntaxHighlighter>
@@ -69,8 +69,9 @@ export default function Compiler() {
                             paddingVertical: 8,
                             top: 0, 
                             left: 0,
+                            width: '100%',
                             color: '#ffffff00',
-                            fontSize: 10,
+                            fontSize: 12,
                             fontFamily: "SpaceMono_400Regular"
                         }}
                         editable
@@ -94,7 +95,7 @@ export default function Compiler() {
 
                     {loading && 
                         <View style={tailwind("flex flex-col justify-center")}>
-                            <ActivityIndicator />
+                            <ActivityIndicator color="#0000ff" />
                         </View>
                     }
                     
