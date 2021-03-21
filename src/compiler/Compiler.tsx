@@ -100,11 +100,11 @@ export default function Compiler() {
                     }
                     
                     {(!loading) && 
-                        <View>
+                        <ScrollView>
                             <Text style={tailwind(`text-sm ${runError && "text-red-500"}`)}>
                                 {runResult || runError}
                             </Text>  
-                        </View> 
+                        </ScrollView> 
                     }
                 </View>
             </View>
