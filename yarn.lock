@@ -1284,6 +1284,11 @@
   resolved "https://registry.yarnpkg.com/@eva-design/processor/-/processor-1.4.0.tgz#388154c96645f86cb36a00a363707db2ff0c963a"
   integrity sha512-QEiP6i2UORPNUZQHPvrCqyy2NQcLc9gvkeiuEckfiruwi++S89/HlJKcLvraiVD8RzZ7r8b7QcAIZdvyScNW7w==
 
+"@expo-google-fonts/space-mono@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/space-mono/-/space-mono-0.1.0.tgz#f7cac81cf260850c43e7c61a67f8237405f9e62b"
+  integrity sha512-tS7WGeLjZm/qxnSHz151fS2CZUj1v//Ov5Kfwims5LB6IJAy6sqhW0uUT7Kjvs769mCVrnY1H2P+ps8nN9WGkg==
+
 "@expo/babel-preset-cli@0.2.18":
   version "0.2.18"
   resolved "https://registry.yarnpkg.com/@expo/babel-preset-cli/-/babel-preset-cli-0.2.18.tgz#136acf8a0efe259e29ebc614b68552e5acb47d86"
@@ -2614,6 +2619,13 @@ available-typed-arrays@^1.0.2:
   dependencies:
     array-filter "^1.0.0"
 
+axios@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
+  dependencies:
+    follow-redirects "^1.10.0"
+
 babel-eslint@^10.1.0:
   version "10.1.0"
   resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-10.1.0.tgz#6968e568a910b78fb3779cdd8b6ac2f479943232"
@@ -3530,7 +3542,7 @@ dayjs@^1.8.15:
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.9.6.tgz#6f0c77d76ac1ff63720dd1197e5cb87b67943d70"
   integrity sha512-HngNLtPEBWRo8EFVmHFmSXAjtCX8rGNqeXQI0Gh7wCTSqwaKgPIDqu9m07wABVopNwzvOeCb+2711vQhDlcIXw==
 
-debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.6, debug@^2.6.9:
+debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   integrity sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==
@@ -4668,6 +4680,11 @@ flatted@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.2.tgz#4575b21e2bcee7434aa9be662f4b7b5f9c2b5138"
   integrity sha512-r5wGx7YeOwNWNlCA0wQ86zKyDLMQr+/RB8xy74M4hTphfmjlijTSSXGuH8rnvKZnfT9i+75zmd8jcKdMR4O6jA==
+
+follow-redirects@^1.10.0:
+  version "1.13.3"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.3.tgz#e5598ad50174c1bc4e872301e82ac2cd97f90267"
+  integrity sha512-DUgl6+HDzB0iEptNQEXLx/KhTmDb8tZUHSeLqpnjpknR70H0nC2t9N73BK6fN4hOvJ84pKlIQVQ4k5FFlBedKA==
 
 fontfaceobserver@^2.1.0:
   version "2.1.0"
@@ -5906,11 +5923,6 @@ load-json-file@^2.0.0:
     parse-json "^2.2.0"
     pify "^2.0.0"
     strip-bom "^3.0.0"
-
-load-script@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/load-script/-/load-script-1.0.0.tgz#0491939e0bee5643ee494a7e3da3d2bac70c6ca4"
-  integrity sha1-BJGTngvuVkPuSUp+PaPSuscMbKQ=
 
 locate-path@^2.0.0:
   version "2.0.0"
@@ -7440,7 +7452,7 @@ promise@^8.0.3:
   dependencies:
     asap "~2.0.6"
 
-prop-types@^15.5.0, prop-types@^15.5.10, prop-types@^15.5.6, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.5.6, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -7660,9 +7672,9 @@ react-native-shared-element@^0.7.0:
   resolved "https://registry.yarnpkg.com/react-native-shared-element/-/react-native-shared-element-0.7.0.tgz#c5e02eb372f6e38e48eb1030fd59be8f3d8c7a1f"
   integrity sha512-TJTGwQceABYete+vH3ahNSgzVzXz7X2SPv3thT91gdcFCrm7ht7IKXBXJiYjOA+4TfdqnGEAWkspCy80oEnOgw==
 
-"react-native-slider@git+https://github.com/abbasfreestyle/react-native-slider.git":
+"react-native-slider@https://github.com/abbasfreestyle/react-native-slider.git":
   version "0.11.0"
-  resolved "git+https://github.com/abbasfreestyle/react-native-slider.git#c53b4965c5e4c3ec258479417898dece367e603e"
+  resolved "https://github.com/abbasfreestyle/react-native-slider.git#c53b4965c5e4c3ec258479417898dece367e603e"
   dependencies:
     prop-types "^15.5.6"
 
@@ -7708,11 +7720,6 @@ react-native-vector-icons@^4.4.2:
     prop-types "^15.5.10"
     yargs "^8.0.2"
 
-react-native-video-player@^0.10.1:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/react-native-video-player/-/react-native-video-player-0.10.1.tgz#818e1aa18e724a2553095efa5c3ccd506f5a33ef"
-  integrity sha512-VUTNHzpj81RSvR8nST+8LGhYpaMbs5ePNV/YWXqh3ogfqjMOpHlf5vFabhGLJEI6Md9KjL1cQ+4gblYjgmuH2Q==
-
 react-native-video@^2.0.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/react-native-video/-/react-native-video-2.3.1.tgz#d0df6f984945a67a0cbfc5ad45a5156e2472ccce"
@@ -7745,11 +7752,6 @@ react-native-web@~0.13.12:
     prop-types "^15.6.0"
     react-timer-mixin "^0.13.4"
 
-react-native-webview-invoke@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/react-native-webview-invoke/-/react-native-webview-invoke-0.5.1.tgz#e6c856a350e472b5cc89ce71f566ebce843adc2a"
-  integrity sha512-/i/ZznUCElTmv1ITdqizOjGdPv1uMq1CY1aoPIVXmAMuhetY9gBv9Vcn/tWv7g2isTKi1NCTc/xnzMgJxT28XQ==
-
 react-native-webview@^11.3.1:
   version "11.3.1"
   resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-11.3.1.tgz#acc87db56eca568fd561edecbd990e8252b882a5"
@@ -7757,26 +7759,6 @@ react-native-webview@^11.3.1:
   dependencies:
     escape-string-regexp "2.0.0"
     invariant "2.2.4"
-
-react-native-youtube-player@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/react-native-youtube-player/-/react-native-youtube-player-0.0.2.tgz#8f8f05e2decb6f7aae303d2eae1251812359ca43"
-  integrity sha1-j48F4t7Lb3quMD0urhJRgSNZykM=
-
-react-native-youtube@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/react-native-youtube/-/react-native-youtube-2.0.1.tgz#1b6275ca2c1db8e13539a59ccfda8ae8479b1590"
-  integrity sha512-CVzJyynKoEEMXHv/Nx+s8HdovnfVIZs0DIUjWUQsgEd+kbBubXJZTguCKj4WigI8SI1LJ0thF8SEGbdqW8oJkw==
-  dependencies:
-    prop-types "^15.5.0"
-
-react-native-yt-player@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/react-native-yt-player/-/react-native-yt-player-1.1.0.tgz#32a00e0a49b60fb8c62aa0d4a1e54331c2c7f4f0"
-  integrity sha512-lQLHrFs8lEjF4NTEChWt2sZCb+bl53bRLovSlnr6hItD3cjtT0l0ujqbwRIgtrkk4J5nEWJuCy/Fge9pcRtqcw==
-  dependencies:
-    react-native-webview-invoke "^0.5.1"
-    youtube-player "^5.5.2"
 
 "react-native@https://github.com/expo/react-native/archive/sdk-40.0.0.tar.gz":
   version "0.63.2"
@@ -8388,11 +8370,6 @@ simple-swizzle@^0.2.2:
   integrity sha1-pNprY1/8zMoz9w0Xy5JZLeleVXo=
   dependencies:
     is-arrayish "^0.3.1"
-
-sister@^3.0.0:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/sister/-/sister-3.0.2.tgz#bb3e39f07b1f75bbe1945f29a27ff1e5a2f26be4"
-  integrity sha512-p19rtTs+NksBRKW9qn0UhZ8/TUI9BPw9lmtHny+Y3TinWlOa9jWh9xB0AtPSdmOy49NJJJSSe0Ey4C7h0TrcYA==
 
 slash@^2.0.0:
   version "2.0.0"
@@ -9560,12 +9537,3 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
-
-youtube-player@^5.5.2:
-  version "5.5.2"
-  resolved "https://registry.yarnpkg.com/youtube-player/-/youtube-player-5.5.2.tgz#052b86b1eabe21ff331095ffffeae285fa7f7cb5"
-  integrity sha512-ZGtsemSpXnDky2AUYWgxjaopgB+shFHgXVpiJFeNB5nWEugpW1KWYDaHKuLqh2b67r24GtP6HoSW5swvf0fFIQ==
-  dependencies:
-    debug "^2.6.6"
-    load-script "^1.0.0"
-    sister "^3.0.0"
