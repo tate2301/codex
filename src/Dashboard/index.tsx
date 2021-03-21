@@ -10,9 +10,9 @@ const Home: React.FC = props => {
     const courses = new Array<ICourse>(
         {
             id: 1,
-            title: 'Live Chat in Vue.js',
-            tagline: 'Building live chat with Vue.js and WebSocket',
-            caption: 'Vue JS Chat apps',
+            title: 'Get started in C',
+            tagline: 'Building C driven apps',
+            caption: 'C',
             color: 'purple',
             poster: 'https://cdn.dribbble.com/users/241205/screenshots/3865871/emailsubs.jpg?compress=1&resize=800x600',
             tags: new Array<TagProps>(
@@ -27,24 +27,6 @@ const Home: React.FC = props => {
                 {
                     label: "GOOGLE",
                     color: "red"
-                },
-                {
-                    label: "FACEBOOK",
-                    color: "red"
-                }
-            )
-        },
-        {
-            id: 2,
-            title: 'Arrays of Pairs',
-            caption: 'Functions? Aha!',
-            tagline: 'Functions and Scope',
-            color: 'purple',
-            poster: 'https://cdn.dribbble.com/users/241205/screenshots/5409400/drib_quizzing_4x.png?compress=1&resize=800x600',
-            tags: new Array<TagProps>(
-                {
-                    label: "EASY",
-                    color: "blue"
                 },
                 {
                     label: "FACEBOOK",

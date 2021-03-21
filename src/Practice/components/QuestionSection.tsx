@@ -9,7 +9,7 @@ const QuestionSection: FC = () => {
     return (
         <View style={{paddingHorizontal: 8, paddingVertical: 16}}>
             <Markdown style={tailwind('text-sm')}>
-                {data.exercises[1].question}
+                {data.exercises[0].question}
             </Markdown>
         </View>
     )

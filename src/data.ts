@@ -53,57 +53,5 @@ Hello World
                 "closing_bracket": 4
             }
         },
-        {
-            id:1,
-            question: `
-#### PYTHON
-## Two Sums
-Given an array of integers, return indices of the two numbers
-such that they add up to a specific target.
-            `,
-            tiles: {
-                blocks: [
-                    {
-                    id: "class_def",
-                    code: "class Solution (object):",
-                    language: "python",
-                    },
-                    {
-                    id: "function_def",
-                    code: "\tdef twoSum(self, nums, target):",
-                    language: "python",
-                    },
-                    {
-                    id: "for_loop_1",
-                    code: "\t\tfor i, num1 in enumerate(nums):",
-                    language: "python",
-                    },
-                    {
-                    id: "if_block",
-                    code: "\t\t\tif nums [i] + nums[j] == target:",
-                    language: "python",
-                    },
-                    {
-                    id: "for_loop_2",
-                    code: "\t\t\t\tfor j in range(i + 1, len(nums)):",
-                    language: "python",
-                    },
-                    {
-                    id: "return_block",
-                    code: "\t\t\t\treturn [i, j]",
-                    language: "python",
-                    },
-                    
-                ]
-            },
-            finalKeys : {
-                "class_def": 0,
-                "function_def": 1,
-                "for_loop_1": 2,
-                "if_block": 3,
-                "for_loop_2": 4,
-                "return_block": 5
-            }
-        }
     ]
 }

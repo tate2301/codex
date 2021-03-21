@@ -7,4 +7,6 @@ export type Routes = {
   LessonList: undefined;
   SliderApp: undefined;
   LessonReview: undefined;
+  Compiler: undefined;
+  VideoView: undefined;
 };

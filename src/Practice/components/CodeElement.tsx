@@ -8,7 +8,7 @@ import { data } from '../../data';
 
 const CodeElement: FC = ({id}:any ) => {
 
-    const d = 1
+    const d = 0
     return(
         <View style={[styles.container, tailwind("bg-gray-700")]}>
             <DragEditor tiles={data.exercises[d].tiles} finalKeys={data.exercises[d].finalKeys} />

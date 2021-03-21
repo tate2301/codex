@@ -15,6 +15,8 @@ import LessonList from "./src/Lesson/components/LessonList";
 import Login from "./src/Auth/Login";
 import SignUp from "./src/Auth/Signup";
 import Profile from "./src/Profile";
+import Compiler from "./src/compiler/Compiler";
+import VideoView from "./src/Lesson/components/LessonVideoView";
 
 const Stack = createStackNavigator<Routes>();
 const AuthStack = createStackNavigator();
@@ -65,7 +67,14 @@ const HomeStackNavigation = () => (
       name="LessonList"
       component={LessonList}
       options={({route}) => ({
-        title: route.params?.title || "Lessons",
+        title: "Summary",
+      })}
+    />
+    <Stack.Screen
+      name="VideoView"
+      component={VideoView}
+      options={({route}) => ({
+        title: "Lecture",
       })}
     />
     <Stack.Screen
@@ -82,6 +91,12 @@ const HomeStackNavigation = () => (
         title: "Practice",
       }}
     />
+    <Stack.Screen
+      name="Compiler"
+      component={Compiler}
+      options={{
+        title: "Playground"
+      }}/>
     <Stack.Screen
       name="Chrome"
       component={Chrome}
