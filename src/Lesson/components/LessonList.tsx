@@ -15,22 +15,6 @@ const LessonList = ({ navigation, route }) => {
     return (
             <SharedElement id={route.params?.id}>
                 <ScrollView>
-                        <View style={{marginHorizontal: 16, marginVertical: 4}}>
-                            <View style={videoStyles.container}>
-                                <Text style={tailwind("text-xl font-bold py-2")}>
-                                    Variables
-                                </Text>
-                                <Text style={tailwind("pb-6")}>
-                                    We explore the concept of variables in the C programming language. Code along with professional programming tutors in this video.
-                                </Text>
-                                <TouchableOpacity onPress={() => navigation.push("VideoView")} style={tailwind("px-8 py-4 bg-green-500 text-white rounded flex justify-center")}>
-                                    <Text style={[tailwind("text-white text-center")]}>
-                                        Watch now
-                                    </Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-
                     <View style={{paddingHorizontal: 16}}>
                         {
                             data.map(lesson => <LessonListCard navigation={navigation} key={lesson.key} title={lesson.title} notes={lesson.notes} />)

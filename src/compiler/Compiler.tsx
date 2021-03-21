@@ -2,7 +2,6 @@ import React from 'react'
 import { View, StyleSheet, TextInput, TouchableOpacity, ActivityIndicator, ScrollView } from 'react-native'
 import { spec } from '../Lesson/data/card-theme'
 import SyntaxHighlighter from 'react-native-syntax-highlighter';
-/*by default component uses hljs so access hljs styles, import from /prism for prism styles */
 import { a11YWhite } from 'react-syntax-highlighter/styles/hljs';
 import tailwind from 'tailwind-rn';
 import Text from '../components/Text';
@@ -21,7 +20,7 @@ export default function Compiler() {
         setLoading(true)
         setRunningResult("")
         setRunError("")
-        Axios.post("http://1192.168.43.30:8000/compile", { code: value })
+        Axios.post("http://192.168.43.30:8000/compile", { code: value })
             .then(response => {
                 if (!response.data.error) {
                     setRunningResult(response.data?.message)
@@ -57,6 +56,7 @@ export default function Compiler() {
                     style={{position: "absolute", top: 0, left: 0, height: '100%', backgroundColor: "#fff"}}>
                     <SyntaxHighlighter 
                         language={"c"} 
+                        customStyle={{fontSize: 12, fontFamily: "SpaceMono_400Regular"}}
                         style={a11YWhite}
                         highlighter={"hljs"}>
                         {value}
@@ -66,15 +66,15 @@ export default function Compiler() {
                         style={{
                             position: "absolute", 
                             paddingHorizontal: 8,
+                            paddingVertical: 8,
                             top: 0, 
                             left: 0,
-                            height: '100%', 
                             color: '#ffffff00',
-                            fontSize: 12,
+                            fontSize: 10,
                             fontFamily: "SpaceMono_400Regular"
                         }}
                         editable
-                        
+                        autoFocus={true}
                         autoCapitalize="none"
                         value={value}
                         onChangeText={onChangeText}
